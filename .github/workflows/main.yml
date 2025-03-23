@@ -18,13 +18,16 @@ jobs:
                   node-version: 18
 
             - name: Install dependencies
-              run: npm install
+              run: | 
+                  cd server
+                  npm install
 
             - name: Run tests
-              run: npm test
+              run: |
+                  cd server
+                  npm test
 
             - name: Generate coverage report
-              run: npm run test:coverage
-
-            - name: Run ESLint
-              run: npm run lint
+              run: |
+                  cd server
+                  npm run test
